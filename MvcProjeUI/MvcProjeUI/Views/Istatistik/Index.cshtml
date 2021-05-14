@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <p>Toplam kategori sayısı</p>
+                <h3>@ViewBag.KategoriToplami</h3>
+            </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <p>Yazılım kategorisine ait başlıklar</p>
+                <h3>@ViewBag.Yazilim</h3>
+            </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <p>Yazar adında "a" harfi geçen</p>
+                <h3>@ViewBag.Yazar</h3>
+            </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <p>Kategori True/False farkı</p>
+                <h3>@ViewBag.KategoriDurum</h3>
+            </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <p>En çok başlığa sahip kategori</p>
+                <h3>@ViewBag.BasligiEnCokKategori</h3>
+            </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer"></a>
+        </div>
+    </div>
+</div>
