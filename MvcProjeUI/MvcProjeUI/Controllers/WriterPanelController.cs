@@ -7,7 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using PagedList;
+using PagedList.Mvc;
 namespace MvcProjeUI.Controllers
 {
     public class WriterPanelController : Controller
@@ -15,6 +16,7 @@ namespace MvcProjeUI.Controllers
         // GET: WriterPanel
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        ContentManager contentManager = new ContentManager(new EfContentDal());
         Context c = new Context();
         
         public ActionResult WriterProfile()
@@ -84,5 +86,13 @@ namespace MvcProjeUI.Controllers
             hm.HeadingDelete(headingValue);
             return RedirectToAction("MyHeading");
         }
+
+        public ActionResult AllHeading(int p=1)
+        {
+            var headindAll = hm.GetList().ToPagedList(p,5);
+            return View(headindAll);
+        }
+
+        
     }
 }

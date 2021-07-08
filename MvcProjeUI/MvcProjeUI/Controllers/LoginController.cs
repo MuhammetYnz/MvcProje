@@ -60,5 +60,12 @@ namespace MvcProjeUI.Controllers
                 //kullanıcı adı veya şifre hatalı ise uyarı versin!!! pop-up ya da viewbag olabilir
             }
         }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings","Default");
+        }
     }
 }

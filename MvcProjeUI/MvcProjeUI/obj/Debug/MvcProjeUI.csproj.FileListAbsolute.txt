@@ -269,3 +269,7 @@ C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\MvcProjeUI\bin\System.Xml.XPa
 C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\MvcProjeUI\bin\System.Xml.XPath.XDocument.dll
 C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\MvcProjeUI\bin\FluentValidation.dll
 C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\MvcProjeUI\bin\FluentValidation.xml
+C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\MvcProjeUI\bin\PagedList.dll
+C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\MvcProjeUI\bin\PagedList.Mvc.dll
+C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\MvcProjeUI\bin\PagedList.xml
+C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\MvcProjeUI\bin\PagedList.Mvc.xml
