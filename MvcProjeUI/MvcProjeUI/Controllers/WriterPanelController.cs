@@ -9,6 +9,9 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
+using FluentValidation.Results;
+using BusinessLayer.ValidationRules;
+
 namespace MvcProjeUI.Controllers
 {
     public class WriterPanelController : Controller
@@ -16,11 +19,37 @@ namespace MvcProjeUI.Controllers
         // GET: WriterPanel
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
-        ContentManager contentManager = new ContentManager(new EfContentDal());
+        //ContentManager contentManager = new ContentManager(new EfContentDal());
+        WriterManager wm = new WriterManager(new EfWriterDal());
+
         Context c = new Context();
-        
-        public ActionResult WriterProfile()
+
+        [HttpGet]
+        public ActionResult WriterProfile(int id=0)
         {
+            string p = (string)Session["WriterMail"];
+            id= c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            var writerValue = wm.GetByID(id);
+            return View(writerValue);
+        }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer p)
+        {
+            WriterValidator writerValidator = new WriterValidator();
+            ValidationResult results = writerValidator.Validate(p);
+            if (results.IsValid)
+            {
+                wm.WriterUpdate(p);
+                return RedirectToAction("AllHeading","WriterPanel");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return View();
         }
 

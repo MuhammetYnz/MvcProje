@@ -17,14 +17,14 @@ namespace MvcProjeUI.Controllers
         MessageValidator messageValidator = new MessageValidator();
         // GET: Message
         [Authorize]
-        public ActionResult Inbox()
+        public ActionResult Inbox(string p)
         {
-            var messageInboxList = mm.GetListInbox();
+            var messageInboxList = mm.GetListInbox(p);
             return View(messageInboxList);
         }
-        public ActionResult Sendbox()
+        public ActionResult Sendbox(string p)
         {
-            var messageSendboxList = mm.GetListSendbox();
+            var messageSendboxList = mm.GetListSendbox(p);
             return View(messageSendboxList);
         }
 
