@@ -17,10 +17,8 @@ namespace MvcProjeUI.Controllers
 
         [Authorize(Roles="B")]
         public ActionResult Index()
-        {
-          
+        {          
             var categoryvalues = cm.GetList();
-
             return View(categoryvalues);
         }
         [HttpGet]
