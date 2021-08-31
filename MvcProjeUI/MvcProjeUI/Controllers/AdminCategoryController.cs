@@ -15,7 +15,7 @@ namespace MvcProjeUI.Controllers
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
 
-        [Authorize(Roles="B")]
+        [Authorize(Roles="A")]
         public ActionResult Index()
         {          
             var categoryvalues = cm.GetList();

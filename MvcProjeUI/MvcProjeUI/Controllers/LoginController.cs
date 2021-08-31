@@ -14,7 +14,8 @@ namespace MvcProjeUI.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
-        WriterLoginManager wm = new WriterLoginManager(new EfWriterDal()); 
+        WriterLoginManager wm = new WriterLoginManager(new EfWriterDal());
+        AdminManager adm = new AdminManager(new EfAdminDal());
         // GET: Login
         [HttpGet]
         public ActionResult Index()
@@ -25,8 +26,9 @@ namespace MvcProjeUI.Controllers
         [HttpPost]
         public ActionResult Index(Admin p)
         {
-            Context c = new Context();
-            var adminUserInfo = c.Admins.FirstOrDefault(x=>x.AdminUserName==p.AdminUserName && x.AdminPassword==p.AdminPassword);
+            //Context c = new Context();
+            //var adminUserInfo = c.Admins.FirstOrDefault(x=>x.AdminUserName==p.AdminUserName && x.AdminPassword==p.AdminPassword);
+            var adminUserInfo = adm.GetAdmin(p.AdminUserName, p.AdminPassword);
             if (adminUserInfo!=null)
             {
                 FormsAuthentication.SetAuthCookie(adminUserInfo.AdminUserName,false);
@@ -35,8 +37,8 @@ namespace MvcProjeUI.Controllers
             }
             else
             {
-                return RedirectToAction("Index");
-                //kullanıcı adı veya şifre hatalı ise uyarı versin!!! pop-up ya da viewbag olabilir
+                ViewBag.Error = "Hatalı Kullanıcı veya Şifre !!!";
+                return View();
             }           
         }
 
@@ -60,8 +62,9 @@ namespace MvcProjeUI.Controllers
             }
             else
             {
-                return RedirectToAction("WriterLogin");
-                //kullanıcı adı veya şifre hatalı ise uyarı versin!!! pop-up ya da viewbag olabilir
+                ViewBag.Error = "Hatalı Kullanıcı veya Şifre !!!";
+                return View();
+              
             }
         }
 

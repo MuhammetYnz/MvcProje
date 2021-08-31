@@ -15,8 +15,25 @@ namespace MvcProjeUI.Controllers
         // GET: About
         public ActionResult Index()
         {
-            var aboutValues = abm.GetList();
+            var aboutValues = abm.GetList();            
             return View(aboutValues);
+        }
+
+        public ActionResult ActiveAbout(int id)
+        {
+            var aboutValue = abm.GetByID(id);
+            aboutValue.AboutStatus = true;
+            abm.AboutUpdate(aboutValue);
+            return RedirectToAction("Index","About");
+
+        }
+
+        public ActionResult PassiveAbout(int id)
+        {
+            var aboutValue = abm.GetByID(id);
+            aboutValue.AboutStatus = false;
+            abm.AboutUpdate(aboutValue);
+            return RedirectToAction("Index", "About");
         }
 
         [HttpGet]

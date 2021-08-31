@@ -3,6 +3,8 @@
     Layout = null;
 }
 
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,9 +28,17 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
                         <h3 class="mb-4 text-center">Bir hesabın var mı?</h3>
-
+                        @{
+                            if (ViewBag.Error != null)
+                            {
+                                <div class="alert alert-danger">
+                                    @ViewBag.Error
+                                </div>
+                            }
+                        }
                         @using (Html.BeginForm("WriterLogin", "Login", FormMethod.Post))
                         {
+
                             <div class="form-group">
                                 <input type="text" class="form-control" name="WriterMail" placeholder="Mail Adresi" required>
                             </div>

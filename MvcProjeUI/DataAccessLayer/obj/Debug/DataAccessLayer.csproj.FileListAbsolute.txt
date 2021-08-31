@@ -39,3 +39,4 @@ C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\DataAccessLayer\obj\Debug\Dat
 C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig_contact_date.resources
 C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig_add_imageFile.resources
 C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig_admin_table.resources
+C:\Users\Acer\Documents\GitHub\MvcProje\MvcProjeUI\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig_aboutstatus.resources

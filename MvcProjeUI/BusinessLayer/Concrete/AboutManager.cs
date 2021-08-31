@@ -32,7 +32,6 @@ namespace BusinessLayer.Concrete
         {
             _aboutDal.Update(about);
         }
-
         public About GetByID(int id)
         {
            return _aboutDal.Get(x => x.AboutID == id);
@@ -41,6 +40,6 @@ namespace BusinessLayer.Concrete
         public List<About> GetList()
         {
             return _aboutDal.List();
-        }
+        }      
     }
 }
